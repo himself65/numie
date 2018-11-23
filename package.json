@@ -1,0 +1,37 @@
+{
+  "name": "numie",
+  "version": "0.0.1",
+  "description": "A scalable multi-function group robot for QQ.",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Himself65/numie.git"
+  },
+  "keywords": [
+    "qqbot",
+    "qq",
+    "himself65"
+  ],
+  "author": "himsefl65",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Himself65/numie/issues"
+  },
+  "homepage": "https://github.com/Himself65/numie#readme",
+  "dependencies": {
+    "cqhttp": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^10.12.10",
+    "eslint": "^5.6.1",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0"
+  }
+}
