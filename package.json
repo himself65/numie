@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "dev": "node src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint src/**/*.js",
+    "test": "npm run lint && cross-env NODE_ENV=test jest -i"
   },
   "repository": {
     "type": "git",
@@ -23,15 +24,31 @@
   },
   "homepage": "https://github.com/Himself65/numie#readme",
   "dependencies": {
+    "axios": "^0.18.0",
     "cqhttp": "^1.1.1"
   },
   "devDependencies": {
+    "@types/jest": "^23.3.9",
     "@types/node": "^10.12.10",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
+    "babel-plugin-detective": "^2.0.0",
+    "babel-plugin-import": "^1.11.0",
+    "babel-plugin-module-resolver": "^3.1.1",
+    "babel-plugin-transform-define": "^1.3.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "cross-env": "^5.2.0",
     "eslint": "^5.6.1",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-promise": "^4.0.1",
-    "eslint-plugin-standard": "^4.0.0"
+    "eslint-plugin-standard": "^4.0.0",
+    "jest": "^23.6.0"
   }
 }
