@@ -12,10 +12,13 @@
 
 ```bash
 # Installation Dependencies
-yarn install 
+yarn install
 
-# Run numie on dev environment
-yarn dev
+# build numie
+yarn build
+
+# run nimie
+yarn run
 ```
 
 ## Requirements
