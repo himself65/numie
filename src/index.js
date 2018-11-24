@@ -19,4 +19,8 @@ const bot = new CQHttp({
   secret: config.secret
 })
 
-bot.listen(8080)
+bot.listen(8080, () => {
+  console.log('NUMIE LOADED.')
+})
+
+
