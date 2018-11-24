@@ -4,7 +4,7 @@
 
 ## USAGE
 
-1. Edit [config.default.js](config.default.js)
+1. Edit [config.js](src/config.js)
 
 2. Run docker based on [Dockerfile](Dockerfile)
 
@@ -14,11 +14,12 @@
 # Installation Dependencies
 yarn install
 
-# build numie
-yarn build
 
-# run nimie
-yarn run
+yarn dev
+
+# or
+
+yarn build
 ```
 
 ## Requirements

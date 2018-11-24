@@ -5,7 +5,8 @@
   },
   "extends": [
     "standard",
-    "eslint:recommended"
+    "eslint:recommended",
+    "plugin:vue/recommended"
   ],
   "plugins": [
     "babel"
@@ -19,6 +20,6 @@
       }
     ],
     "no-unused-vars": "warn",
-    "no-console": "warn"
+    "no-console": "off"
   }
 }

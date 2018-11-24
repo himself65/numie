@@ -1,26 +1,12 @@
-import config from '../config.default'
+import Vue from 'vue'
+import Vuetify from 'vuetify'
+import 'vuetify/dist/vuetify.min.css'
+import App from './App.vue'
 
-const commands = []
+Vue.use(Vuetify)
 
-export function addCommand (cmd) {
-  const { name, description, callback } = cmd
-  commands[name] = {
-    name: name,
-    description: description,
-    callback: callback
-  }
-}
+Vue.config.productionTip = false
 
-const CQHttp = require('cqhttp')
-
-const bot = new CQHttp({
-  apiRoot: config.api_root,
-  accessToken: config.access_token,
-  secret: config.secret
-})
-
-bot.listen(8080, () => {
-  console.log('NUMIE LOADED.')
-})
-
-
+new Vue({
+  render: h => h(App),
+}).$mount('#app')
