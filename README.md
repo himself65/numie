@@ -1,5 +1,7 @@
 # NUMIE
 
+[![Build Status](https://travis-ci.com/Himself65/numie.svg?branch=master)](https://travis-ci.com/Himself65/numie)
+
 > A scalable multi-function group robot for QQ.
 
 ## USAGE
