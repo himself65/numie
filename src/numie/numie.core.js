@@ -86,9 +86,9 @@ export default class NumieCore {
         const tagger = new Tagger()
         const event = events[k]
         await this.bot.on(event.name, (_, context) => {
-          if (!tagger.hasVisited(context.self_id)) {
+          if (event !== undefined && !tagger.hasVisited(context.message_id)) {
             const message = context.message
-            const args = getArgs(message) // has removed the first element
+            const args = getArgs(message) // has removed the first element;
             event.callback(this, context, args)
           }
         })

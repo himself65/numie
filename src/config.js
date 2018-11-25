@@ -16,8 +16,7 @@ const commands = [
     index: 'exec',
     describe: '执行代码',
     callback: function (bot, args) {
-      // todo
-      return '暂无'
+      return '正在开发'
     }
   }
 ]

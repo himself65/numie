@@ -1,5 +1,7 @@
 import includes from 'lodash/includes'
-import { getArgs, isOrder } from "../utils";
+import { getArgs, isOrder } from "../utils"
+import isObject from "lodash/isObject"
+
 
 const onGroup = {
   name: 'message.group',
@@ -10,10 +12,12 @@ const onGroup = {
     if (includes(groups, group_id)) {
       console.log('match qq group:', group_id)
       if (isOrder(message)) {
-        console.log('match qq message:', message)
+        console.log('match qq message:', context.message_id)
         const index = args[0]
-        console.log(index)
-        const msg = index && numie.commands[index].callback(numie.bot, getArgs(args)) || ''
+        let msg = '未知指令'
+        console.log(getArgs(args))
+        if (isObject(numie.commands[index]))
+          msg = index && numie.commands[index].callback(numie.bot, getArgs(args))
         numie.bot('send_group_msg', {
           group_id: group_id,
           message: msg

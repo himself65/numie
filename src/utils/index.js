@@ -19,9 +19,9 @@ export function isOrder (message, prefixes = config.prefix_instructions) {
 }
 
 export class Tagger {
-  constructor (props) {
+  constructor (props = { length: 10 }) {
     this.ids = []
-    this.len = props.length || 10
+    this.len = props.length
   }
 
   hasVisited (value) {
