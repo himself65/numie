@@ -1,0 +1,41 @@
+{
+  "plugins": [
+    "transform-runtime",
+    "transform-object-rest-spread",
+    "transform-decorators-legacy"
+  ],
+  "env": {
+    "build": {
+      "presets": [
+        "@vue/app"
+      ]
+    },
+    "test": {
+      "plugins": [
+        "transform-es2015-modules-commonjs",
+        [
+          "module-resolver",
+          {
+            "root": [
+              "./src"
+            ],
+            "alias": {
+              "~plugins": "plugins"
+            }
+          }
+        ]
+      ],
+      "presets": [
+        [
+          "env",
+          {
+            "targets": {
+              "node": "current"
+            }
+          }
+        ],
+        "stage-2"
+      ]
+    }
+  }
+}
