@@ -1,0 +1,3 @@
+it('Numie Core Test', () => {
+  
+})

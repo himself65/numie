@@ -1,5 +1,5 @@
 import { CQWebSocket } from 'cq-websocket'
-import { getArgs } from "../utils"
+import { getArgs, Tagger } from "../utils"
 
 export default class NumieCore {
   constructor (props) {
@@ -79,28 +79,18 @@ export default class NumieCore {
   }
 
   async initEvents () {
-    const tagger = {
-      visited: function (id) {
-        const ids = this.ids
-        if (ids.indexOf(id) === -1) {
-          ids.push(id)
-          if (ids.length > 10) ids.pop()
-          return false
-        }
-        return true
-      },
-      ids: []
-    }
     try {
       const events = require('../plugins')
       console.log(events)
       for (const k in events) {
+        const tagger = new Tagger()
         const event = events[k]
         await this.bot.on(event.name, (_, context) => {
-          const id = context.self_id
-          const message = context.message
-          const args = getArgs(message) // has removed the first element
-          event.callback(this, context, args)
+          if (!tagger.hasVisited(context.self_id)) {
+            const message = context.message
+            const args = getArgs(message) // has removed the first element
+            event.callback(this, context, args)
+          }
         })
       }
       console.log('events loaded.')

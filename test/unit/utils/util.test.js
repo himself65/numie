@@ -1,3 +1,5 @@
+import { getArgs, Tagger } from "@/utils"
+
 it('Regular expression 1', () => {
   let pattern = /^-b/
   expect(pattern.test('-b')).toBeTruthy()
@@ -22,4 +24,20 @@ it('Regular group expression', () => {
   expect(patterns.some((value) => {
     return check(' help', value)
   })).toBeFalsy()
+})
+
+
+it('getArgs test', () => {
+  expect(getArgs([1, 2, 3])).toEqual([2, 3])
+  expect(getArgs('-b help shit')).toEqual(['help', 'shit'])
+})
+
+it('Tagger test', () => {
+  const tagger = new Tagger({ length: 2 })
+  expect(tagger.len).toEqual(2)
+  expect(tagger.hasVisited(1)).toBeFalsy()
+  expect(tagger.hasVisited(1)).toBeTruthy()
+  expect(tagger.hasVisited(2)).toBeFalsy()
+  expect(tagger.hasVisited(3)).toBeFalsy()
+  expect(tagger.hasVisited(1)).toBeFalsy()
 })
