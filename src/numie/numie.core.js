@@ -1,8 +1,10 @@
 import { CQWebSocket } from 'cq-websocket'
 import { getArgs, Tagger } from "../utils"
+import EventEmitter from 'events'
 
-export default class NumieCore {
+export default class NumieCore extends EventEmitter {
   constructor (props) {
+    super()
     this.conf = props.conf
     this.commands = {}
     this.retryInterval = 1000

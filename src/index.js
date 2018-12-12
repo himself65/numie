@@ -1,12 +1,8 @@
-import Vue from 'vue'
-import Vuetify from 'vuetify'
-import 'vuetify/dist/vuetify.min.css'
-import App from './App.vue'
+import Koa from 'koa'
 
-Vue.use(Vuetify)
+const app = new Koa()
 
-Vue.config.productionTip = false
 
-new Vue({
-  render: h => h(App),
-}).$mount('#app')
+app.listen(3005, () => {
+  console.log('loaded')
+})

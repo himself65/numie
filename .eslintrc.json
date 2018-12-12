@@ -5,8 +5,7 @@
   },
   "extends": [
     "standard",
-    "eslint:recommended",
-    "plugin:vue/recommended"
+    "eslint:recommended"
   ],
   "plugins": [
     "babel"
