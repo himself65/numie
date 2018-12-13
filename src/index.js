@@ -9,7 +9,7 @@ numie.connect()
 
 numie.on('message', async (event, context) => {
   const message = context.message
-  if (/签到排名/.test(message)) {
+  if (/^签到排名$/.test(message)) {
     let res = ''
     try {
       const data = await require('./plugins').getRating()
