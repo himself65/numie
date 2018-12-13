@@ -1,5 +1,7 @@
 import { getArgs, Tagger } from "@/utils"
 
+import _ from 'lodash'
+
 it('Regular expression 1', () => {
   let pattern = /^-b/
   expect(pattern.test('-b')).toBeTruthy()
